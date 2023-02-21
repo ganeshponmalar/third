@@ -34,6 +34,12 @@ process.on('uncaughtException',(error)=>{
 })
 
 
-
+process.on('uncaughtException',(error)=>{
+    console.log(`Error:${error.message}`);
+    console.log('shitting down due to uncaught exception error')
+    server.close(()=>{
+        process.exit(1)
+    })
+})
 
 
